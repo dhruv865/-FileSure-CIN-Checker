@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Check the structure of Indian Company CIN and LLPIN identification numbers with FileSure."
+    >
+
+    <meta name="theme-color" content="#0f172a">
+
+    <title>CIN & LLPIN Checker | FileSure</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-content">
+
+            <a href="#" class="brand" aria-label="FileSure home">
+                <span class="brand-icon">F</span>
+                <span>FileSure</span>
+            </a>
+
+            <span class="nav-label">
+                Company Intelligence Tools
+            </span>
+
+        </div>
+    </header>
+
+
+    <!-- Main Section -->
+    <main class="container main-content">
+
+        <!-- Hero Section -->
+        <section class="hero">
+
+            <span class="eyebrow">
+                FREE COMPANY RESEARCH TOOL
+            </span>
+
+            <h1>CIN & LLPIN Checker</h1>
+
+            <p>
+                Check the structure of Indian company and LLP
+                identification numbers. Decode available information
+                and identify formatting errors in seconds.
+            </p>
+
+        </section>
+
+
+        <!-- Input Section -->
+        <section class="checker-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Enter identification numbers</h2>
+
+                    <p>
+                        Enter one CIN or LLPIN per line.
+                    </p>
+                </div>
+
+                <span class="format-badge">
+                    BULK VALIDATION
+                </span>
+
+            </div>
+
+
+            <!-- Input Label -->
+            <label for="cinInput">
+                CIN / LLPIN numbers
+            </label>
+
+
+            <!-- Textarea -->
+            <textarea
+                id="cinInput"
+                rows="7"
+                placeholder="Enter your numbers here...
+
+Example:
+L17110MH1973PLC019786
+AAA-1234"
+                spellcheck="false"
+                autocapitalize="characters"
+                autocomplete="off"
+                aria-describedby="inputInstructions"
+            ></textarea>
+
+
+            <!-- Input Instructions -->
+            <div class="input-footer">
+
+                <span id="lineCount" aria-live="polite">
+                    0 entries
+                </span>
+
+                <button
+                    type="button"
+                    class="text-button"
+                    id="clearBtn"
+                >
+                    Clear all
+                </button>
+
+            </div>
+<p id="inputMessage" class="input-message" role="alert" hidden></p>
+
+            <p class="helper-text" id="inputInstructions">
+                Maximum 500 entries per submission.
+                Remove spaces before or after each number.
+                Blank lines are ignored.
+            </p>
+
+
+            <!-- Action Buttons -->
+            <div class="action-row">
+
+                <button
+                    type="button"
+                    class="sample-button"
+                    id="sampleBtn"
+                >
+                    Load sample data
+                </button>
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    id="validateBtn"
+                >
+                    Validate numbers →
+                </button>
+
+            </div>
+
+
+            <p class="helper-text">
+                Your input is processed in your browser.
+                No live MCA database verification is performed.
+            </p>
+
+        </section>
+
+
+        <!-- Results Section -->
+        <section
+            class="results-section"
+            id="resultsSection"
+            aria-labelledby="resultsTitle"
+            hidden
+        >
+
+            <!-- Results Heading -->
+            <div class="results-heading">
+
+                <div>
+                    <h2 id="resultsTitle">
+                        Validation results
+                    </h2>
+
+                    <p>
+                        Review the structural validation results
+                        for your submitted numbers.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="sample-button"
+                    id="exportBtn"
+                >
+                    ↓ Export CSV
+                </button>
+
+            </div>
+            <p id="resultsSummary" class="results-summary">
+    Your validation summary will appear here.
+</p>
+
+
+            <!-- Statistics -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span>Total entries</span>
+                    <strong id="totalCount">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Valid format</span>
+                    <strong id="validCount">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Invalid format</span>
+                    <strong id="invalidCount">0</strong>
+                </div>
+                <div class="stat-card">
+    <span>Duplicate entries</span>
+    <strong id="duplicateCount">0</strong>
+</div>
+
+            </div>
+
+
+            <!-- Individual Results -->
+             <p id="resultsMessage" class="results-message" role="status" hidden></p>
+            <div
+                id="resultsList"
+                class="results-list"
+                aria-live="polite"
+            ></div>
+
+        </section>
+
+
+        <!-- Information Section -->
+        <section class="info-section">
+
+            <h2>
+                Understanding company identification numbers
+            </h2>
+
+            <p>
+                A Corporate Identity Number (CIN) is a unique
+                identification number assigned to companies
+                registered in India.
+            </p>
+
+            <p>
+                A Limited Liability Partnership Identification
+                Number (LLPIN) identifies a registered Limited
+                Liability Partnership.
+            </p>
+
+
+            <h3>What does FileSure check?</h3>
+
+            <ul>
+                <li>
+                    CIN length and character structure.
+                </li>
+
+                <li>
+                    Recognized state codes.
+                </li>
+
+                <li>
+                    Incorporation year format and supported range.
+                </li>
+
+                <li>
+                    Company type code structure.
+                </li>
+
+                <li>
+                    LLPIN structure according to the current
+                    validation rules.
+                </li>
+
+                <li>
+                    Duplicate entries within your submission.
+                </li>
+            </ul>
+
+
+            <h3>Important verification note</h3>
+
+            <p>
+                FileSure performs structural validation only.
+                A valid-format result does not confirm that a
+                company or LLP exists, is active, or is registered
+                with the Ministry of Corporate Affairs (MCA).
+                Consult official MCA records for confirmation.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 FileSure CIN & LLPIN Checker.
+                Built for company research.
+            </p>
+
+            <p class="footer-note">
+                Structural validation does not confirm live
+                MCA registration status.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

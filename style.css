@@ -1,0 +1,698 @@
+
+/* =========================================
+   FILESURE - CIN & LLPIN CHECKER
+   Main Stylesheet
+========================================= */
+
+
+/* 1. Global Settings */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #173b68;
+    --primary-dark: #102c50;
+    --accent: #3979c9;
+
+    --background: #f5f7fb;
+    --white: #ffffff;
+
+    --text: #172b46;
+    --muted: #718096;
+    --border: #e5eaf1;
+
+    --success: #16865b;
+    --danger: #d94b4b;
+
+    --warning: #e5a000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: auto;
+}
+
+button,
+textarea {
+    font-family: inherit;
+}
+
+
+/* 2. Navigation */
+
+.navbar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 17px 0;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    text-decoration: none;
+    color: var(--primary);
+
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.brand-icon {
+    display: grid;
+    place-items: center;
+
+    width: 36px;
+    height: 36px;
+
+    background: var(--primary);
+    color: white;
+
+    border-radius: 9px;
+
+    font-size: 20px;
+}
+
+.nav-label {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* 3. Main Hero Section */
+
+.main-content {
+    padding-top: 65px;
+    padding-bottom: 70px;
+}
+
+.hero {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 38px;
+}
+
+.eyebrow {
+    display: inline-block;
+
+    color: var(--accent);
+    background: #eaf2fc;
+
+    padding: 6px 13px;
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 5vw, 43px);
+    line-height: 1.2;
+    letter-spacing: -1.7px;
+
+    color: var(--primary-dark);
+
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 16px;
+
+    max-width: 600px;
+    margin: auto;
+}
+
+
+/* 4. Checker Card */
+
+.checker-card {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    padding: 32px;
+
+    box-shadow: 0 8px 30px rgba(24, 52, 88, 0.045);
+}
+
+.section-heading,
+.results-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.section-heading h2,
+.results-heading h2 {
+    font-size: 20px;
+    color: var(--primary-dark);
+
+    margin-bottom: 4px;
+}
+
+.section-heading p,
+.results-heading p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.format-badge {
+    color: var(--accent);
+    background: #edf4fd;
+
+    border-radius: 5px;
+    padding: 6px 10px;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+
+/* 5. Input Area */
+
+.checker-card label {
+    display: block;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 165px;
+
+    resize: vertical;
+
+    border: 1px solid #dce3ec;
+    border-radius: 9px;
+
+    padding: 16px;
+
+    font-size: 14px;
+    color: var(--text);
+
+    background: #fbfcfe;
+
+    outline: none;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea:focus {
+    border-color: var(--accent);
+
+    box-shadow: 0 0 0 3px rgba(57, 121, 201, 0.1);
+}
+
+textarea::placeholder {
+    color: #a1acba;
+}
+
+.input-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 9px;
+
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.text-button {
+    background: none;
+    border: none;
+
+    color: var(--accent);
+
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.text-button:hover {
+    text-decoration: underline;
+}
+
+.helper-text {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.6;
+
+    margin-top: 12px;
+}
+
+
+/* 6. Buttons */
+
+.action-row {
+    display: flex;
+    gap: 12px;
+
+    margin-top: 23px;
+}
+
+.primary-button,
+.sample-button {
+    padding: 13px 20px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.primary-button {
+    background: var(--primary);
+    color: white;
+
+    border: 1px solid var(--primary);
+
+    flex: 1;
+}
+
+.primary-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.sample-button {
+    background: white;
+    color: var(--primary);
+
+    border: 1px solid var(--border);
+}
+
+.sample-button:hover {
+    background: #f3f7fc;
+    border-color: #b8cce4;
+}
+
+
+/* 7. Keyboard Accessibility */
+
+button:focus-visible,
+a:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid rgba(57, 121, 201, 0.35);
+    outline-offset: 3px;
+}
+
+
+/* 8. Results Section */
+
+.results-section {
+    margin-top: 35px;
+}
+
+.results-heading {
+    flex-wrap: wrap;
+}
+
+.results-heading button {
+    white-space: nowrap;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: white;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    padding: 20px;
+}
+
+.stat-card span {
+    display: block;
+
+    color: var(--muted);
+    font-size: 12px;
+
+    margin-bottom: 5px;
+}
+
+.stat-card strong {
+    color: var(--primary-dark);
+    font-size: 26px;
+}
+
+.results-list {
+    display: grid;
+    gap: 12px;
+}
+
+.result-card {
+    background: white;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    padding: 20px;
+
+    overflow-wrap: anywhere;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.result-card:hover {
+    border-color: #c5d5e8;
+
+    box-shadow: 0 5px 18px rgba(24, 52, 88, 0.05);
+}
+
+.result-card h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.result-card p {
+    color: var(--muted);
+    font-size: 13px;
+
+    margin-top: 5px;
+}
+
+.result-card ul {
+    padding-left: 20px;
+    margin-top: 7px;
+
+    color: var(--danger);
+    font-size: 13px;
+}
+
+.result-card li {
+    margin-bottom: 4px;
+}
+
+.result-card .status {
+    margin-right: 6px;
+    margin-bottom: 8px;
+}
+
+
+/* 9. Status Labels */
+
+.status {
+    display: inline-block;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    padding: 4px 9px;
+    border-radius: 20px;
+}
+
+.status.valid {
+    color: var(--success);
+    background: #e8f7ef;
+}
+
+.status.invalid {
+    color: var(--danger);
+    background: #fff0f0;
+}
+
+
+/* 10. MCA Verification Disclaimer */
+
+.verification-note {
+    margin-top: 10px;
+    padding: 10px;
+
+    background: #fff8e7;
+
+    border-left: 3px solid var(--warning);
+    border-radius: 4px;
+
+    color: #765500 !important;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* 11. Information Section */
+
+.info-section {
+    margin-top: 45px;
+    padding: 28px;
+
+    background: #edf3fa;
+
+    border: 1px solid #e1eaf5;
+    border-radius: 10px;
+}
+
+.info-section h2 {
+    color: var(--primary-dark);
+    font-size: 19px;
+
+    margin-bottom: 12px;
+}
+
+.info-section h3 {
+    color: var(--primary-dark);
+    font-size: 15px;
+
+    margin-top: 23px;
+    margin-bottom: 9px;
+}
+
+.info-section p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+
+    margin-bottom: 10px;
+}
+
+.info-section ul {
+    padding-left: 22px;
+
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.info-section li {
+    padding-left: 3px;
+    margin-bottom: 3px;
+}
+
+
+/* 12. Footer */
+
+.footer {
+    background: white;
+
+    border-top: 1px solid var(--border);
+
+    text-align: center;
+    padding: 25px 0;
+}
+
+.footer p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.footer-note {
+    margin-top: 5px;
+}
+
+
+/* 13. Mobile Responsive Design */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .main-content {
+        padding-top: 42px;
+        padding-bottom: 45px;
+    }
+
+    .nav-label {
+        font-size: 10px;
+    }
+
+    .brand {
+        font-size: 20px;
+    }
+
+    .checker-card {
+        padding: 20px 16px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .action-row {
+        flex-direction: column;
+    }
+
+    .primary-button,
+    .sample-button {
+        width: 100%;
+    }
+
+    .stats-grid {
+        gap: 8px;
+    }
+
+    .stat-card {
+        padding: 12px 9px;
+    }
+
+    .stat-card strong {
+        font-size: 22px;
+    }
+
+    .stat-card span {
+        font-size: 10px;
+    }
+
+    .results-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .results-heading button {
+        width: 100%;
+    }
+
+    .info-section {
+        padding: 20px 17px;
+    }
+
+    .result-card {
+        padding: 16px;
+    }
+}
+
+
+/* 14. Reduced Motion Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+/* Input feedback messages */
+
+.input-message {
+    margin: 12px 0 0;
+    padding: 11px 14px;
+    border: 1px solid #f2c6c6;
+    border-radius: 8px;
+    background: #fff1f1;
+    color: #a52828;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.input-message[hidden] {
+    display: none;
+}
+/* Duplicate entry status */
+
+.status.duplicate {
+    background: #fff4db;
+    color: #946200;
+    border: 1px solid #f1d38a;
+}
+/* Results feedback message */
+
+.results-message {
+    margin: 16px 0;
+    padding: 14px 16px;
+    border: 1px solid #f2c6c6;
+    border-radius: 8px;
+    background: #fff1f1;
+    color: #a52828;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.results-message[hidden] {
+    display: none;
+}
+/* Results summary */
+
+.results-summary {
+    margin: 16px 0;
+    padding: 14px 18px;
+    background: #eef4fc;
+    border: 1px solid #d6e4f5;
+    border-radius: 10px;
+    color: #173b68;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.results-summary:empty {
+    display: none;
+}
